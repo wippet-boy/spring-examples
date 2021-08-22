@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        springBootVersion = '2.5.4.RELEASE'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.jrg'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-integration'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.springframework.integration:spring-integration-file:5.5.3"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.integration:spring-integration-test'
+}
+
+test {
+    useJUnitPlatform()
+}
