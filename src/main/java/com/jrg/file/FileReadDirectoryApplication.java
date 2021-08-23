@@ -3,13 +3,14 @@ package com.jrg.file;
 import org.apache.commons.io.FileUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.integration.config.EnableIntegration;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-//@SpringBootApplication(scanBasePackages = "com.jrg.file")
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.jrg.file")
+@EnableIntegration
 public class FileReadDirectoryApplication {
 
     private static final String DIRECTORY = "/Users/johnrobertgrant/Documents/playground/temp/";
